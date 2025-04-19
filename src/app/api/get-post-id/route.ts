@@ -1,10 +1,6 @@
-import { PrismaClient } from "@prisma/client";
 import { NextResponse } from "next/server";
 import { auth } from "../../../../auth";
-
-const prisma = new PrismaClient({
-  log: ["query", "info", "warn", "error"], // Enable Prisma logging for queries
-});
+import { prisma } from "@/lib/prisma";
 
 export async function GET() {
   const session = await auth();
