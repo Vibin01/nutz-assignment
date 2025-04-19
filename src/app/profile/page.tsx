@@ -19,10 +19,8 @@ const Page = () => {
 
   React.useEffect(() => {
     const getData = async () => {
-      if (!session?.user?.id) return;
-
       try {
-        const res = await fetch(`/api/getpost/${session.user.id}`);
+        const res = await fetch(`/api/get-post-id`);
         const posts = await res.json();
 
         if (Array.isArray(posts)) {
